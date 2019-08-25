@@ -357,7 +357,7 @@ border:0;
 /* -----------------------------*/
 
 .section-testimonials{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.800)), url(css/img/back-customers.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.800)), url(img/back-customers.jpg);
     background-size:cover;
     color:#fff;
     background-attachment: fixed;
