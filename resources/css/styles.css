@@ -5,7 +5,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html, 
@@ -128,6 +129,7 @@ a:visited{
     text-decoration:none;
     padding-bottom: 1px;
     border-bottom: 1px solid #e67e22;
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
     transition: border-bottom 0.2s, color 0.2s;
 }
 
@@ -147,6 +149,7 @@ input[type=submit] {
     font-weight: 300;
     text-decoration: none;
     border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
     transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
@@ -188,6 +191,7 @@ input[type=submit] {
 /*---------------------------------*/
 
 header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 0%, 0.70)), to(hsla(0, 0%, 0%, 0.70))), url(img/hero.jpg);
     background-image: linear-gradient(hsla(0, 0%, 0%, 0.70), hsla(0, 0%, 0%, 0.70)), url(img/hero.jpg);
     background-size: cover;
     background-position: center;
@@ -200,16 +204,26 @@ header {
     width: 1140px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
-.logo {
+.logo{
     height: 100px;
     width: auto;
     float: left;
     margin-top: 20px;
 }
 
+.logo-black {
+    display:none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+}
+
+/*Main Nav*/
 .main-nav {
     float: right;
     list-style-type: none;
@@ -228,6 +242,7 @@ header {
     text-transform: uppercase;
     font-size: 90%;
     border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
     padding: 8px 0;
 }
@@ -237,6 +252,39 @@ header {
     border-bottom: 2px solid #e67e22;
 }
 
+
+/*Sticky Nav*/
+.sticky{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    background-color:rgba(255, 255, 255, 0.980);
+    -webkit-box-shadow: 0 2px 2px rgb(75, 74, 74);
+            box-shadow: 0 2px 2px rgb(75, 74, 74);
+    z-index: 1;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    color: #555;
+    padding: 18px 0;
+}
+
+.sticky .logo{
+    display:none;
+}
+
+.sticky .logo-black{
+    display:block;
+}
+
+
+.sticky .main-nav {
+    float: right;
+    list-style-type: none;
+    margin-top: 18px;
+}
 /*---------------------------------*/
 /*FEATURES/
 /*---------------------------------*/
@@ -270,8 +318,12 @@ header {
     opacity: 0.7;
     width:100%;
     height: auto;
-    transform:scale(1.15);
+    -webkit-transform:scale(1.15);
+            transform:scale(1.15);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
     transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
 .section-meals{
@@ -280,7 +332,8 @@ header {
 
 .meal-photo img:hover{
     opacity: 1;
-    transform:scale(1.03); 
+    -webkit-transform:scale(1.03);
+            transform:scale(1.03); 
 }
 
 /* -----------------------------*/
@@ -364,6 +417,7 @@ border:0;
 /* -----------------------------*/
 
 .section-testimonials{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.800)), to(rgba(0, 0, 0, 0.800))), url(img/back-customers.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.800)), url(img/back-customers.jpg);
     background-size:cover;
     color:#fff;
@@ -413,7 +467,8 @@ cite img{
  border-radius: 5px;
  width: 90%;
  margin-left: 5%;
- box-shadow: 0 2px 2px #fff;
+ -webkit-box-shadow: 0 2px 2px #fff;
+         box-shadow: 0 2px 2px #fff;
 }
 
 .plan-box div{
@@ -524,6 +579,7 @@ margin-right:20px;
  text-decoration: none;
  border:none;
  color:#888282;
+ -webkit-transition: color 0.2s;
  transition: color 0.2s;
 }
 
@@ -543,6 +599,7 @@ margin-right:20px;
 .ion-logo-twitter,
 .ion-logo-googleplus,
 .ion-logo-instagram{
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -567,4 +624,27 @@ footer p{
     color:#888282;
     text-align:center;
     margin-top: 20px;
+}
+
+/*---------------------------------*/
+/*ANIMATIONS*/
+/*---------------------------------*/
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3{
+    opacity:0;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+.js--wp-4{
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated{
+ opacity:1;
 }
