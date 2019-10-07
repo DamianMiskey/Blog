@@ -26,20 +26,20 @@ $(document).ready(function () {
 
     /* navigation scroll*/
 
-    $(function () {
-        $("a[href*=#]:not([href=#])").click(function () {
-            if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
-                if (target.length) {
-                    $("html, body").animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
+    // $(function () {
+    //     $("a[href*=#]:not([href=#])").click(function () {
+    //         if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
+    //             var target = $(this.hash);
+    //             target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+    //             if (target.length) {
+    //                 $("html, body").animate({
+    //                     scrollTop: target.offset().top
+    //                 }, 1000);
+    //                 return false;
+    //             }
+    //         }
+    //     });
+    // });
 
 
     /*Anmimations on scroll*/
@@ -63,4 +63,26 @@ $(document).ready(function () {
     }, {
         offset: "50%"
     });
+
+//*Mobile Nav*/
+$(".js--nav-icon").click(function(){
+var nav = $(".js--main-nav");
+var icon = $(".js--nav-icon i")
+nav.slideToggle(200);
+
+if(icon.hasClass("ion-ios-menu")){
+ icon.addClass("ion-ios-close");
+ icon.removeClass("ion-ios-menu");
+}else{
+ icon.addClass("ion-ios-menu");
+ icon.removeClass("ion-ios-close");
+}
+
+
+
+
 });
+
+
+});
+
